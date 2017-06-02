@@ -1,27 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z8Z-6z-Hy2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="mqO-nz-8GK">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="z8Z-6z-Hy2" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="Idv-Ip-Qzj"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSk-Z5-ObQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="ZGc-Ax-3JT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YSScrollView" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="y4u-jS-h0R">
+                                <rect key="frame" x="20" y="524.5" width="336" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y4u-jS-h0R" secondAttribute="height" multiplier="336:43" id="vWl-Qj-ESf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.265684486" green="0.265684486" blue="0.265684486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_launch" translatesAutoresizingMaskIntoConstraints="NO" id="WN7-V9-7P3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="PnD-yL-RE3"/>
+                                    <constraint firstAttribute="width" secondItem="WN7-V9-7P3" secondAttribute="height" multiplier="75:86" id="c2u-rC-LOe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XiaoYi Shi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xi4-ZH-oCc">
+                                <rect key="frame" x="20" y="632.5" width="336" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xi4-ZH-oCc" firstAttribute="leading" secondItem="ZGc-Ax-3JT" secondAttribute="leading" constant="20" symbolic="YES" id="9gM-nn-Wov"/>
+                            <constraint firstItem="WN7-V9-7P3" firstAttribute="top" secondItem="ZGc-Ax-3JT" secondAttribute="top" id="Gle-IY-jT0"/>
+                            <constraint firstItem="y4u-jS-h0R" firstAttribute="leading" secondItem="ZGc-Ax-3JT" secondAttribute="leading" constant="20" id="MC3-b6-gyB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xi4-ZH-oCc" secondAttribute="trailing" constant="3" id="O30-sg-CGS"/>
+                            <constraint firstItem="Xi4-ZH-oCc" firstAttribute="top" secondItem="y4u-jS-h0R" secondAttribute="bottom" constant="65" id="UwB-k7-PCc"/>
+                            <constraint firstAttribute="centerX" secondItem="Xi4-ZH-oCc" secondAttribute="centerX" id="XiO-fV-yGH"/>
+                            <constraint firstAttribute="trailing" secondItem="WN7-V9-7P3" secondAttribute="trailing" id="cBW-Fp-t4W"/>
+                            <constraint firstItem="WN7-V9-7P3" firstAttribute="leading" secondItem="ZGc-Ax-3JT" secondAttribute="leading" id="fEq-mT-Uld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y4u-jS-h0R" secondAttribute="trailing" constant="3" id="hFb-wa-CxC"/>
+                            <constraint firstAttribute="trailing" secondItem="y4u-jS-h0R" secondAttribute="trailing" constant="19" id="kV3-63-gr6"/>
+                            <constraint firstAttribute="bottom" secondItem="Xi4-ZH-oCc" secondAttribute="bottom" constant="20" id="qD3-jc-Yeb"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dhk-Ty-8L4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="746" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_launch" width="1024" height="1024"/>
+    </resources>
 </document>

@@ -88,7 +88,6 @@
 		56A9150A1EDEB49A00FCA896 = {
 			isa = PBXGroup;
 			children = (
-				56A9153A1EDEDC3200FCA896 /* SDWebImage */,
 				56A915151EDEB49A00FCA896 /* YSScrollView */,
 				56A915141EDEB49A00FCA896 /* Products */,
 			);
@@ -105,6 +104,7 @@
 		56A915151EDEB49A00FCA896 /* YSScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				56A9153A1EDEDC3200FCA896 /* SDWebImage */,
 				56A915191EDEB49A00FCA896 /* AppDelegate.h */,
 				56A9151A1EDEB49A00FCA896 /* AppDelegate.m */,
 				56A9151C1EDEB49A00FCA896 /* ViewController.h */,
@@ -169,7 +169,8 @@
 				56A915561EDEDC3200FCA896 /* UIView+WebCacheOperation.h */,
 				56A915571EDEDC3200FCA896 /* UIView+WebCacheOperation.m */,
 			);
-			path = SDWebImage;
+			name = SDWebImage;
+			path = ../SDWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +423,7 @@
 				56A9152C1EDEB49A00FCA896 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
