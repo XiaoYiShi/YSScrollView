@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565C53DB1EE83433009F9CD4 /* UIView+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C53DA1EE83433009F9CD4 /* UIView+YS.m */; };
 		56A915181EDEB49A00FCA896 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A915171EDEB49A00FCA896 /* main.m */; };
 		56A9151B1EDEB49A00FCA896 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9151A1EDEB49A00FCA896 /* AppDelegate.m */; };
 		56A9151E1EDEB49A00FCA896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9151D1EDEB49A00FCA896 /* ViewController.m */; };
@@ -31,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		565C53D91EE83433009F9CD4 /* UIView+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YS.h"; sourceTree = "<group>"; };
+		565C53DA1EE83433009F9CD4 /* UIView+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YS.m"; sourceTree = "<group>"; };
+		565C53DC1EE836CF009F9CD4 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		56A915131EDEB49A00FCA896 /* YSScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A915171EDEB49A00FCA896 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56A915191EDEB49A00FCA896 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +113,9 @@
 				56A9151A1EDEB49A00FCA896 /* AppDelegate.m */,
 				56A9151C1EDEB49A00FCA896 /* ViewController.h */,
 				56A9151D1EDEB49A00FCA896 /* ViewController.m */,
+				565C53D91EE83433009F9CD4 /* UIView+YS.h */,
+				565C53DA1EE83433009F9CD4 /* UIView+YS.m */,
+				565C53DC1EE836CF009F9CD4 /* Header.h */,
 				56A915331EDEB6D300FCA896 /* YSScrollView */,
 				56A9151F1EDEB49A00FCA896 /* Main.storyboard */,
 				56A915221EDEB49A00FCA896 /* Assets.xcassets */,
@@ -262,6 +269,7 @@
 				56A915641EDEDC3200FCA896 /* UIImageView+WebCache.m in Sources */,
 				56A9155E1EDEDC3200FCA896 /* SDWebImageManager.m in Sources */,
 				56A9155B1EDEDC3200FCA896 /* SDWebImageDecoder.m in Sources */,
+				565C53DB1EE83433009F9CD4 /* UIView+YS.m in Sources */,
 				56A915591EDEDC3200FCA896 /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

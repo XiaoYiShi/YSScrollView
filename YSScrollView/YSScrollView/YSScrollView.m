@@ -9,6 +9,7 @@
 #import "YSScrollView.h"
 
 #import "UIImageView+WebCache.h"
+#import "UIView+YS.h"
 
 #define timerIntrval 3.5f //timer的计时时间
 
@@ -52,29 +53,31 @@
 
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
-    _scrollView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    if (self.bounds.size.height>20) {
-        _pageControl.frame = CGRectMake(0, self.bounds.size.height-20, self.bounds.size.width, 20);
-    } else {
-        _pageControl.frame = CGRectMake(0, 0, self.bounds.size.width, 0);
-    }
+    [self layoutSubviews];
 }
 
 - (void)layoutSubviews {
-    
     [super layoutSubviews];
     
-    _scrollView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    if (self.bounds.size.height>20) {
-        _pageControl.frame = CGRectMake(0, self.bounds.size.height-20, self.bounds.size.width, 20);
+    _scrollView.ys_size = CGSizeMake(self.ys_width, self.ys_height);
+    if (self.bounds.size.height >= 20) {
+        _pageControl.frame = CGRectMake(0, self.ys_height-20, self.ys_width, 20);
     } else {
-        _pageControl.frame = CGRectMake(0, 0, self.bounds.size.width, 0);
+        _pageControl.frame = CGRectMake(0, 0, self.ys_width, 0);
+    }
+    if (self.imageViewArray.count == 3 ) {
+        self.imageViewArray[0].ys_width     = self.ys_width;
+        self.imageViewArray[0].ys_height    = self.ys_height;
+        self.imageViewArray[1].ys_width     = self.ys_width;
+        self.imageViewArray[1].ys_height    = self.ys_height;
+        self.imageViewArray[2].ys_width     = self.ys_width;
+        self.imageViewArray[2].ys_height    = self.ys_height;
     }
 }
 
 - (UIPageControl *)pageControl {
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-20, self.bounds.size.width, 20)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.ys_height-20, self.ys_width, 20)];
         _pageControl.userInteractionEnabled = NO;
     }
     return _pageControl;
@@ -82,7 +85,7 @@
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.ys_width, self.ys_height)];
         _scrollView.showsHorizontalScrollIndicator = NO;//隐藏滚动条
         _scrollView.scrollsToTop           = NO;        //关闭scrollsToTop，不会影响控制器的scrollsToTop属性
         _scrollView.delegate               = self;
@@ -106,7 +109,6 @@
 
 #pragma scrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    
     [self timerOff];
 }
 
@@ -115,13 +117,13 @@
     
     CGPoint point = _scrollView.contentOffset;
     
-    if (point.x >= _scrollView.frame.size.width*(_imageURLArray.count+1)) {
-        point.x = _scrollView.frame.size.width;
+    if (point.x >= _scrollView.ys_width*(_imageURLArray.count+1)) {
+        point.x = _scrollView.ys_width;
     } else if (point.x <= 0){
-        point.x = _scrollView.frame.size.width*_imageURLArray.count;
+        point.x = _scrollView.ys_width*_imageURLArray.count;
     }
     
-    NSInteger page = point.x/_scrollView.frame.size.width-1;
+    NSInteger page = point.x/_scrollView.ys_width-1;
     if (page == _scrollPage) {
         
     } else {
@@ -141,7 +143,7 @@
 
 #pragma mark - SEL
 - (void)tapGR {
-    int i = _scrollView.contentOffset.x/_scrollView.bounds.size.width;
+    int i = _scrollView.contentOffset.x/_scrollView.ys_width;
     if (_imageURLArray.count>0) {
         //代理传值，在外部响应
         [self.delegate YSScrollViewTouchIndex:i-1];
@@ -153,8 +155,9 @@
     
     if (!self.imageURLArray.count) return;
     
-    CGPoint point = _scrollView.contentOffset;
-    point.x += self.frame.size.width;
+    CGPoint point = self.scrollView.contentOffset;
+    self.scrollPage += 1;
+    point.x = self.ys_width*(self.scrollPage+1);
     
     [_scrollView setContentOffset:point animated:YES];
 }
@@ -186,7 +189,7 @@
     
     for (int i = 0; i<3; i++) {
         
-        _imageViewArray[i].frame = CGRectMake(self.frame.size.width*(index+i), 0, self.frame.size.width, self.bounds.size.height);
+        _imageViewArray[i].frame = CGRectMake(self.ys_width*(index+i), 0, self.ys_width, self.ys_height);
         
         NSString *imageUrlStr = nil;
         if (index+i == 0) {
@@ -216,8 +219,8 @@
     
     self.pageControl.hidden = NO;
     
-    self.scrollView.contentSize = CGSizeMake(self.bounds.size.width*(_imageURLArray.count+2), self.bounds.size.height);
-    _scrollView.contentOffset   = CGPointMake(self.bounds.size.width, 0);
+    self.scrollView.contentSize = CGSizeMake(self.ys_width*(_imageURLArray.count+2), self.ys_height);
+    _scrollView.contentOffset   = CGPointMake(self.ys_width, 0);
     
     //只有一张时不允许滚动
     if (_imageURLArray.count == 1) {
@@ -237,3 +240,12 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
