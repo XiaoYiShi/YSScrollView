@@ -1,9 +1,8 @@
 # YSScrollView
-三张图实现图片无限滚动控件
-
+三张图片无限滚动控件
 ===
-    - 本项目需结合SDWebImage使用，demo中使用cocoapads导入SDWebImage
-    - 使用前，请将对应语言下的YSScrollView文件夹导入工程
+- 本项目需结合SDWebImage使用，demo中使用cocoapads导入SDWebImage
+- 使用前，请将对应语言下的YSScrollView文件夹导入工程
 
 # swift
 
